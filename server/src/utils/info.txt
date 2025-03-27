@@ -1,0 +1,1 @@
+Utilitarios (funciones auxiliares, helpers)

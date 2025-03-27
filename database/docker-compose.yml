@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass123
+      MYSQL_DATABASE: transferenciasdb
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: adminpass123
+    ports:
+      - "3309:3306"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./schema:/docker-entrypoint-initdb.d/schema
+      - ./procedures:/docker-entrypoint-initdb.d/procedures
